@@ -258,6 +258,27 @@ a.card:hover .more::after { margin-left: .25rem; }
 .latest .more::after { content: " \2192"; }
 @media (max-width: 680px) { .latest { grid-template-columns: 1fr; gap: .75rem; padding: 1.4rem; } .item, .checklist { padding-left: 1.1rem; padding-right: 1.1rem; } }
 
+/* Career timeline, recognition, past talks */
+.timeline { list-style: none; margin: 0; padding: 0; max-width: 44rem; border-left: 2px solid var(--line); }
+.timeline li { position: relative; padding: 0 0 1.75rem 1.5rem; }
+.timeline li::before { content: ""; position: absolute; left: -.45rem; top: .45rem; width: .8rem; height: .8rem; border-radius: 50%; background: var(--surface); border: 2px solid var(--teal); }
+.timeline li.now::before { background: var(--marigold); border-color: var(--marigold); }
+.timeline .when { font-family: var(--sans); font-weight: 600; font-size: .85rem; color: var(--teal); letter-spacing: .04em; }
+.timeline h3 { margin: .2rem 0 .15rem; }
+.timeline .org { font-family: var(--sans); font-size: .95rem; color: var(--muted); }
+.timeline p { margin: .4rem 0 0; color: var(--muted); }
+.recog { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+.recog .card ul { margin: .75rem 0 0; padding-left: 1.1rem; color: var(--muted); }
+.recog .card li { margin-bottom: .45rem; }
+.recog .card li strong { color: var(--ink); font-family: var(--sans); font-weight: 600; }
+.talks { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; }
+.talks li { display: grid; grid-template-columns: 5rem 1fr; gap: 1.25rem; align-items: baseline; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 1rem 1.25rem; }
+.talks .yr { font-family: var(--sans); font-weight: 800; font-size: 1.2rem; color: var(--teal); }
+.talks strong { font-family: var(--sans); font-weight: 600; display: block; line-height: 1.35; }
+.talks span.where { font-family: var(--sans); font-size: .9rem; color: var(--muted); }
+.cover.teal { background: linear-gradient(165deg, #2F6F73, #173B3E); }
+@media (max-width: 680px) { .recog { grid-template-columns: 1fr; } .talks li { grid-template-columns: 1fr; gap: .25rem; } }
+
 /* Responsive */
 @media (max-width: 860px) {
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
