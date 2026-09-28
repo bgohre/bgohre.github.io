@@ -1,1 +1,1 @@
-# bgohre.github.io.-
+# bgohre.github.io
