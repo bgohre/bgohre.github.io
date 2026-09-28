@@ -90,6 +90,9 @@ a:hover { color: var(--ink); }
 .tabs li:nth-child(1) a { background: var(--marigold); }
 .tabs li:nth-child(2) a { background: var(--sage); }
 .tabs li:nth-child(3) a { background: #B9CFD0; }
+.tabs li:nth-child(4) a { background: #D9B8A0; }
+.tabs li:nth-child(5) a { background: #C7C0DA; }
+.tabs li:nth-child(6) a { background: #E6D38A; }
 .tabs a:hover { padding-right: .8rem; }
 .tabs a[aria-current="page"] { padding-right: .9rem; font-weight: 700; }
 
@@ -180,7 +183,9 @@ h3 { font-size: 1.15rem; font-weight: 500; margin-bottom: .25rem; }
 
 @media (max-width: 640px) {
   .binder { flex-direction: column-reverse; margin-top: 1rem; }
-  .tabs { flex-direction: row; padding: 0 0 0 1rem; gap: .35rem; }
+  .tabs { flex-direction: row; padding: 0 1rem; gap: .35rem; overflow-x: auto; scrollbar-width: none; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tabs a { white-space: nowrap; }
   .tabs a {
     writing-mode: horizontal-tb;
     padding: .55rem .9rem;
@@ -193,4 +198,78 @@ h3 { font-size: 1.15rem; font-weight: 500; margin-bottom: .25rem; }
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
+}
+
+/* Cards for books, stories, and talks */
+.feature {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 1.75rem;
+  align-items: start;
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--rule);
+  max-width: 44rem;
+}
+.feature:last-of-type { border-bottom: 1px solid var(--rule); }
+.feature p { margin: .4rem 0 0; color: var(--muted); }
+.feature .meta { font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: .95rem; color: var(--teal); margin-top: .25rem; }
+.feature .button { margin-top: 1rem; }
+
+.cover {
+  aspect-ratio: 2 / 3;
+  border-radius: 3px 8px 8px 3px;
+  padding: 1rem .85rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+  color: #F7EFDD;
+  box-shadow: inset 6px 0 0 rgba(0,0,0,.18);
+}
+.cover strong { font-size: .92rem; line-height: 1.2; hyphens: auto; overflow-wrap: break-word; }
+.cover span { font-size: .75rem; opacity: .85; }
+.cover.navy { background: #1B2A3A; }
+.cover.teal { background: #2F6F73; }
+.cover.indigo { background: linear-gradient(160deg, #20264a, #161b38); aspect-ratio: 1 / 1; }
+.cover.indigo strong { color: #E0A526; }
+
+.date {
+  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+  font-weight: 700;
+  color: var(--ink);
+  border-left: 4px solid var(--marigold);
+  padding-left: .75rem;
+  line-height: 1.3;
+}
+.date span { display: block; font-weight: 500; color: var(--muted); font-size: .9rem; }
+
+@media (max-width: 640px) {
+  .feature { grid-template-columns: 1fr; gap: 1rem; }
+  .cover { max-width: 9rem; }
+}
+
+.cover-img {
+  width: 100%;
+  height: auto;
+  border-radius: 3px 8px 8px 3px;
+  box-shadow: 0 10px 24px -12px rgba(27, 42, 58, .55);
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: 1fr 13rem;
+  gap: 2rem;
+  align-items: end;
+  max-width: 44rem;
+}
+.portrait {
+  width: 100%;
+  height: auto;
+  border-radius: 999px 999px 12px 12px;
+  background: var(--paper);
+}
+
+@media (max-width: 640px) {
+  .cover-img { max-width: 9rem; }
+  .intro { grid-template-columns: 1fr 7.5rem; gap: 1rem; }
 }
