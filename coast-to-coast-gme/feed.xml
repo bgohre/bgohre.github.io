@@ -6,7 +6,7 @@
   <channel>
     <title>Coast to Coast GME</title>
     <link>https://www.behindgme.com/coast-to-coast-gme/</link>
-    <lastBuildDate>Thu, 01 Oct 2026 23:09:11 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 23:35:00 GMT</lastBuildDate>
     <description>Two GME professionals, from the West Coast to the East Coast, talking about all things GME from the boots on the ground perspective. Coast to Coast GME is produced with AI tools, which help draft scripts, create artwork, and generate the voices you hear. The ideas and stories come from the hosts, who review every episode before release, and the views shared are their own.</description>
     <language>en</language>
     <itunes:author>Barbara Gohre</itunes:author>
@@ -26,6 +26,16 @@
       <enclosure url="https://www.behindgme.com/coast-to-coast-gme/audio/ep1-the-no-that-built-a-journal.mp3" length="4190084" type="audio/mpeg"/>
       <guid isPermaLink="false">tag:behindgme.com,2026:coast-to-coast-gme-ep1</guid>
       <itunes:duration>4:23</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>From Reactive to Ready - Coast to Coast GME Ep 2</title>
+      <description>Danielle and Nicole on making site visit readiness a daily routine, plus the Common Program Requirements revision open for comment.</description>
+      <pubDate>Thu, 01 Oct 2026 23:35:00 GMT</pubDate>
+      <enclosure url="https://www.behindgme.com/coast-to-coast-gme/audio/ep2-from-reactive-to-ready.mp3" length="2766381" type="audio/mpeg"/>
+      <guid isPermaLink="false">tag:behindgme.com,2026:coast-to-coast-gme-ep2</guid>
+      <itunes:duration>2:53</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
