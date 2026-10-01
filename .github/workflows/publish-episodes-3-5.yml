@@ -1,0 +1,112 @@
+name: Publish Coast to Coast GME episodes 3-5
+on:
+  workflow_dispatch:
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: publish-eps-3-5
+      - name: Insert episode sections and feed items
+        run: |
+          set -e
+          python3 - <<'PYEOF'
+          from datetime import datetime, timezone
+          now = datetime.now(timezone.utc).strftime('%a, %d %b %Y %H:%M:%S GMT')
+
+          p = 'coast-to-coast-gme/index.html'
+          s = open(p, encoding='utf-8').read()
+          anchor = '        </article>\n\n        <p class="meta" style="margin-top:1.75rem">'
+          assert s.count(anchor) == 1, 'index anchor'
+          html_lines = [
+          '        </article>',
+          '',
+          '        <article class="episode">',
+          '          <span class="chip t-stories">Episode 3</span>',
+          '          <h3>Leading from Wherever You Sit</h3>',
+          '          <p class="ep-meta">October 1, 2026 &middot; 3 min</p>',
+          '          <p>Danielle and Nicole on leading without a title, from reliability and systems to the national stage.</p>',
+          '          <audio controls preload="none" src="https://www.behindgme.com/coast-to-coast-gme/audio/ep3-leading-from-wherever-you-sit.mp3">',
+          '            <a href="https://www.behindgme.com/coast-to-coast-gme/audio/ep3-leading-from-wherever-you-sit.mp3">Download the episode</a>',
+          '          </audio>',
+          '        </article>',
+          '',
+          '        <article class="episode">',
+          '          <span class="chip t-stories">Episode 4</span>',
+          '          <h3>The Job Description That Never Matches the Job</h3>',
+          '          <p class="ep-meta">October 1, 2026 &middot; 3 min</p>',
+          '          <p>Danielle and Nicole on the gap between the job description and the real work of program administrators, and how to make the role visible.</p>',
+          '          <audio controls preload="none" src="https://www.behindgme.com/coast-to-coast-gme/audio/ep4-the-job-description-that-never-matches-the-job.mp3">',
+          '            <a href="https://www.behindgme.com/coast-to-coast-gme/audio/ep4-the-job-description-that-never-matches-the-job.mp3">Download the episode</a>',
+          '          </audio>',
+          '        </article>',
+          '',
+          '        <article class="episode">',
+          '          <span class="chip t-stories">Episode 5</span>',
+          '          <h3>Field Notes Issue 01</h3>',
+          '          <p class="ep-meta">October 1, 2026 &middot; 3 min</p>',
+          '          <p>Danielle and Nicole walk through the October 2026 Field Notes newsletter: hot topics, the accreditation corner, and the recovery lap.</p>',
+          '          <audio controls preload="none" src="https://www.behindgme.com/coast-to-coast-gme/audio/ep5-field-notes-issue-01.mp3">',
+          '            <a href="https://www.behindgme.com/coast-to-coast-gme/audio/ep5-field-notes-issue-01.mp3">Download the episode</a>',
+          '          </audio>',
+          '        </article>',
+          '',
+          '        <p class="meta" style="margin-top:1.75rem">',
+          ]
+          s = s.replace(anchor, '\n'.join(html_lines))
+          open(p, 'w', encoding='utf-8').write(s)
+          print('index.html updated')
+
+          p = 'coast-to-coast-gme/feed.xml'
+          s = open(p, encoding='utf-8').read()
+          link_anchor = '    <link>https://www.behindgme.com/coast-to-coast-gme/</link>\n'
+          assert s.count(link_anchor) == 1, 'feed link anchor'
+          s = s.replace(link_anchor, link_anchor + '    <lastBuildDate>' + now + '</lastBuildDate>\n')
+          item_anchor = '    </item>\n  </channel>'
+          assert s.count(item_anchor) == 1, 'feed item anchor'
+          xml_lines = [
+          '    </item>',
+          '    <item>',
+          '      <title>Leading from Wherever You Sit - Coast to Coast GME Ep 3</title>',
+          '      <description>Danielle and Nicole on leading without a title, from reliability and systems to the national stage.</description>',
+          '      <pubDate>' + now + '</pubDate>',
+          '      <enclosure url="https://www.behindgme.com/coast-to-coast-gme/audio/ep3-leading-from-wherever-you-sit.mp3" length="2879661" type="audio/mpeg"/>',
+          '      <guid isPermaLink="false">tag:behindgme.com,2026:coast-to-coast-gme-ep3</guid>',
+          '      <itunes:duration>3:00</itunes:duration>',
+          '      <itunes:explicit>no</itunes:explicit>',
+          '      <itunes:episodeType>full</itunes:episodeType>',
+          '    </item>',
+          '    <item>',
+          '      <title>The Job Description That Never Matches the Job - Coast to Coast GME Ep 4</title>',
+          '      <description>Danielle and Nicole on the gap between the job description and the real work of program administrators, and how to make the role visible.</description>',
+          '      <pubDate>' + now + '</pubDate>',
+          '      <enclosure url="https://www.behindgme.com/coast-to-coast-gme/audio/ep4-the-job-description-that-never-matches-the-job.mp3" length="3064749" type="audio/mpeg"/>',
+          '      <guid isPermaLink="false">tag:behindgme.com,2026:coast-to-coast-gme-ep4</guid>',
+          '      <itunes:duration>3:11</itunes:duration>',
+          '      <itunes:explicit>no</itunes:explicit>',
+          '      <itunes:episodeType>full</itunes:episodeType>',
+          '    </item>',
+          '    <item>',
+          '      <title>Field Notes Issue 01 - Coast to Coast GME Ep 5</title>',
+          '      <description>Danielle and Nicole walk through the October 2026 Field Notes newsletter: hot topics, the accreditation corner, and the recovery lap.</description>',
+          '      <pubDate>' + now + '</pubDate>',
+          '      <enclosure url="https://www.behindgme.com/coast-to-coast-gme/audio/ep5-field-notes-issue-01.mp3" length="2840493" type="audio/mpeg"/>',
+          '      <guid isPermaLink="false">tag:behindgme.com,2026:coast-to-coast-gme-ep5</guid>',
+          '      <itunes:duration>2:57</itunes:duration>',
+          '      <itunes:explicit>no</itunes:explicit>',
+          '      <itunes:episodeType>full</itunes:episodeType>',
+          '    </item>',
+          '  </channel>',
+          ]
+          s = s.replace(item_anchor, '\n'.join(xml_lines))
+          open(p, 'w', encoding='utf-8').write(s)
+          print('feed.xml updated at ' + now)
+          PYEOF
+          git config user.name "bgohre"
+          git config user.email "Barbara.gohre@gmail.com"
+          git add coast-to-coast-gme/index.html coast-to-coast-gme/feed.xml
+          git commit -m "Add episodes 3-5 to show page and feed"
+          git push origin publish-eps-3-5
