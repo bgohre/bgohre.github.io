@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Coast to Coast GME</title>
+    <link>https://www.behindgme.com/coast-to-coast-gme/</link>
+    <description>Two GME leaders, from the West Coast to the East Coast, in conversation about and eventually with the leaders shaping the GME community.</description>
+    <language>en</language>
+    <itunes:author>Barbara Gohre</itunes:author>
+    <itunes:summary>Two GME leaders, from the West Coast to the East Coast, in conversation about and eventually with the leaders shaping the GME community.</itunes:summary>
+    <itunes:owner>
+      <itunes:name>Barbara Gohre</itunes:name>
+      <itunes:email>Barbara.gohre@gmail.com</itunes:email>
+    </itunes:owner>
+    <itunes:image href="https://www.behindgme.com/coast-to-coast-gme/cover.jpg"/>
+    <itunes:category text="Education"/>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
+    <item>
+      <title>The No That Built a Journal - Coast to Coast GME Premiere</title>
+      <description>Coast to Coast GME premiere: how a declined manuscript became FULGME, the open-access journal giving GME professionals a place to publish.</description>
+      <pubDate>Wed, 01 Oct 2026 12:26:18 GMT</pubDate>
+      <enclosure url="https://www.behindgme.com/coast-to-coast-gme/audio/ep1-the-no-that-built-a-journal.mp3" length="2110693" type="audio/mpeg"/>
+      <guid isPermaLink="false">tag:behindgme.com,2026:coast-to-coast-gme-ep1</guid>
+      <itunes:duration>4:23</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+  </channel>
+</rss>
