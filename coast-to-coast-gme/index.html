@@ -19,6 +19,8 @@
     .pod-hero h1 { margin: .4rem 0 1rem; }
     .pod-hero .lede { margin: 0 0 1.75rem; }
     .pod-actions { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; }
+    button.btn { cursor: pointer; font-size: inherit; line-height: inherit; }
+    .copy-msg { font-family: var(--sans); font-size: .92rem; color: var(--muted); min-height: 1.3em; margin: .75rem 0 0; }
     .episode { background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--plum);
       border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.75rem 1.75rem 1.5rem; max-width: 44rem; }
     .episode h3 { font-family: var(--display); font-size: 1.85rem; line-height: 1.15; color: var(--plum); margin: .6rem 0 .5rem; }
@@ -62,8 +64,9 @@
             <p class="lede">Two GME leaders, from the West Coast to the East Coast, in conversation about and eventually with the leaders shaping the GME community.</p>
             <div class="pod-actions">
               <a class="btn" href="#episodes">Listen now</a>
-              <a class="btn ghost" href="feed.xml">RSS feed</a>
+              <button class="btn ghost" type="button" id="copyfeed">Copy RSS link</button>
             </div>
+            <p class="copy-msg" id="copymsg" aria-live="polite"></p>
           </div>
         </div>
       </div>
@@ -83,7 +86,7 @@
           </audio>
         </article>
 
-        <p class="meta" style="margin-top:1.75rem">Subscribe in any podcast app that accepts an RSS feed by adding <a href="feed.xml">this feed link</a>.</p>
+        <p class="meta" style="margin-top:1.75rem">Follow the show in any podcast app: copy the RSS link and paste it where the app says "Add show by URL." <a href="feed.xml">View the feed</a>.</p>
       </div>
     </section>
 
@@ -102,5 +105,16 @@
       </ul>
     </div>
   </footer>
+  <script>
+    (function () {
+      var btn = document.getElementById('copyfeed'), msg = document.getElementById('copymsg');
+      var url = 'https://behindgme.com/coast-to-coast-gme/feed.xml';
+      btn.addEventListener('click', function () {
+        function done() { msg.textContent = 'RSS link copied. Paste it into your podcast app to follow the show.'; }
+        function fail() { msg.innerHTML = 'Copy this link into your podcast app: <a href="feed.xml">' + url + '</a>'; }
+        if (navigator.clipboard) { navigator.clipboard.writeText(url).then(done, fail); } else { fail(); }
+      });
+    })();
+  </script>
 </body>
 </html>
