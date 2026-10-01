@@ -1,32 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Coast to Coast GME</title>
-<style>
-  body { font-family: Georgia, serif; max-width: 640px; margin: 0 auto; padding: 2rem 1.25rem; color: #2c2340; background: #faf8ff; }
-  img { width: 100%; max-width: 400px; border-radius: 12px; display: block; margin: 0 auto 1.5rem; }
-  h1 { text-align: center; font-size: 1.8rem; }
-  p.tagline { text-align: center; font-style: italic; color: #5b4b8a; }
-  .episode { background: #fff; border: 1px solid #e3dcf5; border-radius: 12px; padding: 1.25rem; margin-top: 1.5rem; }
-  .episode h2 { margin-top: 0; font-size: 1.15rem; }
-  audio { width: 100%; margin-top: 0.75rem; }
-  .subscribe { text-align: center; margin-top: 2rem; }
-  .subscribe a { color: #5b4b8a; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coast to Coast GME | Barbara Gohre</title>
+  <meta name="description" content="Two GME leaders, from the West Coast to the East Coast, in conversation about and eventually with the leaders shaping the GME community.">
+  <meta name="theme-color" content="#4A1D6B">
+  <meta property="og:title" content="Coast to Coast GME">
+  <meta property="og:description" content="Two GME leaders, from the West Coast to the East Coast, in conversation about and eventually with the leaders shaping the GME community.">
+  <meta property="og:image" content="https://behindgme.com/coast-to-coast-gme/cover.jpg">
+  <link rel="alternate" type="application/rss+xml" title="Coast to Coast GME" href="feed.xml">
+  <link rel="stylesheet" href="../style.css?v=20261001">
+  <style>
+    .pod-hero { padding: 3.5rem 0 3rem; }
+    .pod-grid { display: grid; grid-template-columns: minmax(0, 420px) minmax(0, 1fr); gap: 3rem; align-items: center; }
+    .pod-cover { width: 100%; height: auto; aspect-ratio: 1; border-radius: 22px; display: block; object-fit: cover;
+      box-shadow: 0 0 0 6px #fff, 0 0 0 7.5px var(--lav-soft), 0 22px 48px rgba(74,29,107,.20); }
+    .pod-hero h1 { margin: .4rem 0 1rem; }
+    .pod-hero .lede { margin: 0 0 1.75rem; }
+    .pod-actions { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; }
+    .episode { background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--plum);
+      border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.75rem 1.75rem 1.5rem; max-width: 44rem; }
+    .episode h3 { font-family: var(--display); font-size: 1.85rem; line-height: 1.15; color: var(--plum); margin: .6rem 0 .5rem; }
+    .episode p { margin: 0 0 1.1rem; color: var(--ink); }
+    .episode .ep-meta { font-family: var(--sans); font-size: .88rem; color: var(--muted); letter-spacing: .02em; margin-bottom: .8rem; }
+    .episode audio { width: 100%; margin-top: .25rem; }
+    @media (max-width: 760px) {
+      .pod-hero { padding: 2rem 0 2.25rem; }
+      .pod-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+      .pod-cover { max-width: 340px; margin: 0 auto; }
+      .episode { padding: 1.35rem 1.2rem 1.2rem; }
+      .episode h3 { font-size: 1.55rem; }
+    }
+  </style>
 </head>
 <body>
-  <img src="cover.jpg" alt="Coast to Coast GME cover art">
-  <h1>Coast to Coast GME</h1>
-  <p class="tagline">Two GME leaders, from the West Coast to the East Coast, in conversation about and eventually with the leaders shaping the GME community.</p>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="../index.html"><span class="dot" aria-hidden="true"></span>Barbara Gohre</a>
+      <nav aria-label="Site"><ul class="nav">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../writing.html">Writing</a></li>
+        <li><a href="./" aria-current="page">Podcast</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../speaking.html">Speaking</a></li>
+        <li><a href="../books.html">Books</a></li>
+      </ul></nav>
+    </div>
+  </header>
 
-  <div class="episode">
-    <h2>Episode 1: The No That Built a Journal</h2>
-    <p>How a declined manuscript became FULGME, the open-access journal giving GME professionals a place to publish.</p>
-    <audio controls preload="none" src="audio/ep1-the-no-that-built-a-journal.mp3"></audio>
-  </div>
+  <main id="main">
 
-  <p class="subscribe">Subscribe with any podcast app: <a href="feed.xml">RSS feed</a></p>
+    <section class="pod-hero">
+      <div class="wrap">
+        <div class="pod-grid">
+          <img class="pod-cover" src="cover-web.jpg" alt="Coast to Coast GME cover art: two women in purple blazers facing each other with a hummingbird between them, a desert landscape on one side and a city skyline on the other" width="900" height="900">
+          <div>
+            <p class="eyebrow">Podcast</p>
+            <h1>Coast to Coast GME</h1>
+            <p class="lede">Two GME leaders, from the West Coast to the East Coast, in conversation about and eventually with the leaders shaping the GME community.</p>
+            <div class="pod-actions">
+              <a class="btn" href="#episodes">Listen now</a>
+              <a class="btn ghost" href="feed.xml">RSS feed</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="episodes" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head"><div><h2>Episodes</h2></div></div>
+
+        <article class="episode">
+          <span class="chip t-stories">Episode 1 &middot; Premiere</span>
+          <h3>The No That Built a Journal</h3>
+          <p class="ep-meta">October 1, 2026 &middot; 4 min</p>
+          <p>How a declined manuscript became FULGME, the open-access journal giving GME professionals a place to publish.</p>
+          <audio controls preload="none" src="audio/ep1-the-no-that-built-a-journal.mp3">
+            <a href="audio/ep1-the-no-that-built-a-journal.mp3">Download the episode</a>
+          </audio>
+        </article>
+
+        <p class="meta" style="margin-top:1.75rem">Subscribe in any podcast app that accepts an RSS feed by adding <a href="feed.xml">this feed link</a>.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <p class="connect">Let&rsquo;s connect</p>
+        <p>The views shared here are my own and don't represent my employer or any organization I'm affiliated with.</p>
+      </div>
+      <ul class="foot-links">
+        <li><a href="https://www.linkedin.com/in/barbara-g-16479b71">LinkedIn</a></li>
+        <li><a href="https://orcid.org/0009-0004-1730-8789">ORCID</a></li>
+        <li><a href="https://fulgme.org">FULGME</a></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 </html>
