@@ -1,0 +1,13 @@
+/* Elegant stat cards */
+.stat{background:linear-gradient(180deg,#fff,var(--tint));border:1px solid var(--line);border-radius:20px;padding:1.5rem;box-shadow:var(--shadow);transition:transform .18s ease,box-shadow .18s ease;}
+.stat:hover{transform:translateY(-2px);box-shadow:0 2px 4px rgba(74,29,107,.06),0 18px 40px rgba(74,29,107,.13);}
+.stat::before{content:"";display:block;width:2.5rem;height:3px;border-radius:999px;background:linear-gradient(90deg,#c9a227,var(--plum));margin:0 0 .9rem;}
+.stat strong{display:block;font-family:var(--display);font-weight:700;font-size:2.75rem;line-height:1.05;letter-spacing:.015em;color:var(--plum);}
+.stat span{display:block;font-size:.92rem;color:#504658;margin-top:.5rem;line-height:1.5;}
+.stat.stat--text strong{font-size:1.5rem;font-style:italic;font-weight:600;line-height:1.35;letter-spacing:0;}
+@media(max-width:680px){
+.stat{padding:1.1rem;border-radius:16px;}
+.stat strong{font-size:2.05rem;}
+.stat.stat--text strong{font-size:1.2rem;}
+.stat span{font-size:.8rem;}
+}
