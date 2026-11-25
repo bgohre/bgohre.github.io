@@ -28,6 +28,7 @@
     .episode p { margin: 0 0 1.1rem; color: var(--ink); }
     .episode .ep-meta { font-family: var(--sans); font-size: .88rem; color: var(--muted); letter-spacing: .02em; margin-bottom: .8rem; }
     .episode audio { width: 100%; margin-top: .25rem; }
+    .episode.featured { border-top-width: 6px; }
     @media (max-width: 760px) {
       .pod-hero { padding: 2rem 0 2.25rem; }
       .pod-grid { grid-template-columns: 1fr; gap: 1.75rem; }
@@ -70,7 +71,7 @@
             <p class="eyebrow">Podcast</p>
             <h1>Coast to Coast GME</h1>
             <p class="lede">Two GME professionals, from the West Coast to the East Coast, talking about all things GME from the boots on the ground perspective.</p>
-            <p class="ai-note">Coast to Coast GME is produced with AI tools, which help draft scripts, create artwork, and generate the voices you hear. The ideas and stories come from the hosts, who review every episode before release, and the views shared are their own.</p>
+            <p class="ai-note">Coast to Coast GME is produced with a little help from AI tools, which lend a hand with scripts, artwork, and voices. The ideas, stories, and views are the hosts' own, and they review every episode before it goes out.</p>
             <div class="pod-actions">
               <a class="btn" href="#episodes">Listen now</a>
               <button class="btn ghost" type="button" id="copyfeed">Copy RSS link</button>
@@ -84,6 +85,19 @@
     <section class="section" id="episodes" style="padding-top:0">
       <div class="wrap">
         <div class="section-head"><div><h2>Episodes</h2></div></div>
+
+        <p class="meta" style="margin-bottom:1.5rem">New for the holidays: our first episode since October, featured below, with the full archive after it.</p>
+
+        <article class="episode featured">
+          <span class="chip t-stories">Featured &middot; Episode 6</span>
+          <h3>Gratitude in the Holiday Season</h3>
+          <p class="ep-meta">November 25, 2026 &middot; 7 min</p>
+          <p>Danielle and Nicole on navigating the holidays while supporting trainees, and pausing to thank everyone who keeps patient care going, in the clinic and behind the scenes.</p>
+          <audio controls preload="none" src="https://www.behindgme.com/coast-to-coast-gme/audio/ep6-gratitude-in-the-holiday-season.mp3">
+            <a href="https://www.behindgme.com/coast-to-coast-gme/audio/ep6-gratitude-in-the-holiday-season.mp3">Download the episode</a>
+          </audio>
+        </article>
+
 
         <article class="episode">
           <span class="chip t-stories">Episode 1 &middot; Premiere</span>
@@ -135,6 +149,16 @@
           </audio>
         </article>
 
+        <article class="episode">
+          <span class="chip t-stories">Episode 6</span>
+          <h3>Gratitude in the Holiday Season</h3>
+          <p class="ep-meta">November 25, 2026 &middot; 7 min</p>
+          <p>Danielle and Nicole on navigating the holidays while supporting trainees, and pausing to thank everyone who keeps patient care going, in the clinic and behind the scenes.</p>
+          <audio controls preload="none" src="https://www.behindgme.com/coast-to-coast-gme/audio/ep6-gratitude-in-the-holiday-season.mp3">
+            <a href="https://www.behindgme.com/coast-to-coast-gme/audio/ep6-gratitude-in-the-holiday-season.mp3">Download the episode</a>
+          </audio>
+        </article>
+
         <p class="meta" style="margin-top:1.75rem">Follow the show in any podcast app: copy the RSS link and paste it where the app says "Add show by URL." <a href="feed.xml">View the feed</a>.</p>
       </div>
     </section>
@@ -168,3 +192,4 @@
   </script>
 </body>
 </html>
+
